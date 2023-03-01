@@ -28,10 +28,10 @@ fi
 
 cp -r ../lib ./
 java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore TestListExamples > run_error.txt
-RUN=`grep -i "Failed" run_error.txt 2> run_error.txt| wc -l`
-echo $RUN
+#RUN=`grep -i "Failed" run_error.txt 2> run_error.txt| wc -l`
+#echo $RUN
 
-if [[ $RUN -ne 0 ]]
+if [[ $? -ne 0 ]]
 then 
     echo "Run Fail: Score 0"
     exit 1
